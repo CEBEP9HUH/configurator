@@ -6,6 +6,10 @@
 #include <stdint.h>
 
 
+extern char* DEFAULT_CONFIG_WIFI_PASS;
+extern char* DEFAULT_CONFIG_WIFI_SSID;
+
+
 typedef struct wifi_t {
     char* ssid;
     char* pass;
