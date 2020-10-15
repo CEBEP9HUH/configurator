@@ -1,14 +1,18 @@
 # Makefile for configurator
 
 CC=gcc
-CCFLAFS=-g#-Wall -Werror -Wextra -pedantic
+CCFLAFS=-Wall -Werror -Wextra -pedantic
 NAME=configurator
 CLEAN=rm -f
 BUILD=build
 SRC=src
 INCLUDE=include
 
+
+
+
 $(BUILD)/$(NAME): $(BUILD)/main.o $(BUILD)/configurator.o
+	[ -d $(BUILD) ] || mkdir -p $(BUILD)
 	$(CC) $(CCFLAFS) -o $@ $^
 
 $(BUILD)/main.o: $(SRC)/main.c
